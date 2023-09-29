@@ -1,0 +1,58 @@
+<CameraScreen>:
+    GridLayout:
+        cols: 1
+        padding: 10
+        spacing: 10
+        Camera:
+            id: camera
+            resolution: (640, 480)
+            play: False
+            size_hint_y: 0.8
+        Button:
+            id: toggle_button
+            text: 'Start camera'
+            size_hint_y: 0.1
+            on_press: root.start() if root.ids.camera.play == False else root.stop()
+        Button:
+            text: 'Capture'
+            size_hint_y: 0.1
+            on_press: root.capture()
+
+<ImageScreen>:
+    GridLayout:
+        cols: 1
+        padding: 10
+        spacing: 10
+        Image:
+            id: screenshot
+            size_hint_y: 0.7
+        Button:
+            text: 'Generate link'
+            size_hint_y: 0.1
+            on_press: root.generate_link()
+        Label:
+            id: link
+            text: ''
+            size_hint_y: 0.1
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.1
+            padding: 10
+            spacing: 10
+            Button:
+                text: 'Copy link'
+                size_hint_y: 0.1
+                on_press: root.copy_link()
+            Button:
+                text: 'Open link'
+                size_hint_y: 0.1
+                on_press: root.open_link()
+
+
+<RootWidget>:
+    CameraScreen:
+        id: camera_screen
+        name: 'camera_screen'
+    ImageScreen:
+        id: image_screen
+        name: 'image_screen'

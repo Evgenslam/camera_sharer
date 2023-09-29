@@ -1,0 +1,8 @@
+Titile: webcam_sharer
+Description: an app that
+stat computer webcam,
+let's the user to
+capture the image,
+upload it to the web and
+create a sharable link.
+
